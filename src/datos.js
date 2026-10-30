@@ -45,13 +45,13 @@ export const productos = [
   { nombre: 'Wraps de jamón y queso', categoria: 'Picaderas', foto: 'picadera-3.jpg' },
   { nombre: 'Bollos de yuca y papa', categoria: 'Picaderas', foto: 'picadera-4.jpg' },
   { nombre: 'Quipes', categoria: 'Picaderas', foto: 'picadera-5.jpg' },
-  // Eventos
-  { nombre: 'Buffet para eventos', categoria: 'Eventos', foto: 'evento-1.jpg' },
-  { nombre: 'Pollo salteado con vegetales', categoria: 'Eventos', foto: 'evento-2.jpg' },
-  { nombre: 'Pastelón', categoria: 'Eventos', foto: 'evento-3.jpg' },
-  { nombre: 'Guineítos con cebolla', categoria: 'Eventos', foto: 'evento-4.jpg' },
-  { nombre: 'Bandejas para eventos', categoria: 'Eventos', foto: 'evento-5.jpg' },
-  { nombre: 'Ensalada verde', categoria: 'Eventos', foto: 'evento-6.jpg' },
+  // Buffet para todos los eventos
+  { nombre: 'Buffet para eventos', categoria: 'Buffet para todos los eventos', foto: 'evento-1.jpg' },
+  { nombre: 'Pollo salteado con vegetales', categoria: 'Buffet para todos los eventos', foto: 'evento-2.jpg' },
+  { nombre: 'Pastelón', categoria: 'Buffet para todos los eventos', foto: 'evento-3.jpg' },
+  { nombre: 'Guineítos con cebolla', categoria: 'Buffet para todos los eventos', foto: 'evento-4.jpg' },
+  { nombre: 'Bandejas para eventos', categoria: 'Buffet para todos los eventos', foto: 'evento-5.jpg' },
+  { nombre: 'Ensalada verde', categoria: 'Buffet para todos los eventos', foto: 'evento-6.jpg' },
 ];
 
 // Menú completo (lista de texto)
