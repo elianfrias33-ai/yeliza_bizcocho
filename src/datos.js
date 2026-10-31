@@ -56,12 +56,17 @@ export const productos = [
 
 // Menú completo (lista de texto)
 export const menu = [
-  { titulo: 'Buffet', items: ['Arroz navideño', 'Arroz con puerro, tocineta y plátano maduro', 'Moro de guandules', 'Moro negro', 'Arroz primaveral', 'Moro de habichuela roja', 'Arroz amarillo'] },
-  { titulo: 'Carnes', items: ['Pechuga a la crema', 'Pechuga a la Cordon Bleu', 'Fajita de pollo', 'Fajita de res', 'Fajitas de cerdo', 'Pollo horneado', 'Pechuga al limón', 'Cerdo horneado', 'Cerdo en su jugo', 'Chuleta natural a la BBQ', 'Bistec encebollado'] },
-  { titulo: 'Pastelones', items: ['De plátano', 'De berenjena', 'De papa', 'De yuca'] },
-  { titulo: 'Lasañas', items: ['De pollo', 'De res', 'Mixta'] },
-  { titulo: 'Ensaladas', items: ['Rusa', 'Mixta', 'Verde', 'De vegetales salteados', 'De pasta', 'Capresa'] },
-  { titulo: 'Guarniciones', items: ['Guineo', 'Yuca', 'Arepitas de yuca y maíz', 'Pan', 'Torrejas'] },
+  { titulo: 'Picaderas', items: ['Pastelitos', 'Quipes', 'Croquetas', 'Bollos de yuca', 'Bollos de papa', 'Sándwiches', 'Mini hot dogs', 'Mini hamburguesas', 'Deditos de mozzarella', 'Tacos', 'Abuelos', 'Canapés'] },
   { titulo: 'Postres', items: ['Bizcochos', 'Tres leches', 'Cheesecake', 'Carlota de limón', 'Brownies', 'Cupcakes', 'Alfajores', 'Mantecados', 'Shot de chinola', 'Shot de fresas', 'Galletas glaseadas', 'Galletas con chispas de chocolate'] },
-  { titulo: 'Bebidas', items: ['Jugos de diferentes sabores', 'Piña colada'] },
+  {
+    titulo: 'Buffet',
+    subcategorias: [
+      { titulo: 'Arroces', items: ['Arroz navideño', 'Arroz con puerro, tocineta y plátano maduro', 'Moro de guandules', 'Moro negro', 'Arroz primaveral', 'Moro de habichuela roja', 'Arroz amarillo'] },
+      { titulo: 'Carnes', items: ['Pechuga a la crema', 'Pechuga a la Cordon Bleu', 'Fajita de pollo', 'Fajita de res', 'Fajitas de cerdo', 'Pollo horneado', 'Pechuga al limón', 'Cerdo horneado', 'Cerdo en su jugo', 'Chuleta natural a la BBQ', 'Bistec encebollado'] },
+      { titulo: 'Pastelones', items: ['De plátano', 'De berenjena', 'De papa', 'De yuca'] },
+      { titulo: 'Lasañas', items: ['De pollo', 'De res', 'Mixta'] },
+      { titulo: 'Ensaladas', items: ['Rusa', 'Mixta', 'Verde', 'De vegetales salteados', 'De pasta', 'Capresa'] },
+      { titulo: 'Guarniciones', items: ['Guineo', 'Yuca', 'Arepitas de yuca y maíz', 'Pan', 'Torrejas'] },
+    ],
+  },
 ];
