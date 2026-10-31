@@ -224,13 +224,15 @@ nav.scrolled{box-shadow:0 8px 30px rgba(74,44,34,.08);background:rgba(255,248,24
 .menu{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .mgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .mcol{background:var(--cream);border:1px solid var(--line);border-radius:22px;padding:30px}
+.mcol-buffet{grid-column:1/-1}
 .mcol h3{font-size:24px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed var(--rose)}
 .mcol ul{list-style:none;display:grid;gap:9px}
 .mcol li{display:flex;align-items:center;gap:10px;color:var(--cocoa2);font-size:15px}
 .mcol li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rose);flex:none}
-.menu-subgroup+.menu-subgroup{margin-top:20px}
+.menu-buffet-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .menu-subgroup h4{font-family:var(--sans);font-size:16px;margin:0 0 10px;color:var(--rose-d)}
-@media (max-width:960px){.mgrid{grid-template-columns:1fr}}
+@media (max-width:960px){.mgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.menu-buffet-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:540px){.mgrid,.menu-buffet-grid{grid-template-columns:1fr}}
 
 
 /* LOGO */

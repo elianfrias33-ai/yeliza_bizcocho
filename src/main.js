@@ -46,10 +46,10 @@ chips.addEventListener('click', (e) => {
 });
 
 // Menú completo
-document.getElementById('menuList').innerHTML = menu.map((g) => `
-  <div class="mcol rv"><h3>${g.titulo}</h3>${g.subcategorias
-    ? g.subcategorias.map((s) => `<section class="menu-subgroup"><h4>${s.titulo}</h4><ul>${s.items.map((i) => `<li>${i}</li>`).join('')}</ul></section>`).join('')
-    : `<ul>${g.items.map((i) => `<li>${i}</li>`).join('')}</ul>`}</div>`).join('');
+document.getElementById('menuList').innerHTML = menu.map((g) => g.subcategorias
+  ? `<div class="mcol mcol-buffet rv"><h3>${g.titulo}</h3><div class="menu-buffet-grid">${g.subcategorias.map((s) => `
+    <section class="menu-subgroup"><h4>${s.titulo}</h4><ul>${s.items.map((i) => `<li>${i}</li>`).join('')}</ul></section>`).join('')}</div></div>`
+  : `<div class="mcol rv"><h3>${g.titulo}</h3><ul>${g.items.map((i) => `<li>${i}</li>`).join('')}</ul></div>`).join('');
 
 // Botones de WhatsApp
 document.querySelectorAll('.wa').forEach((a) => {
