@@ -178,17 +178,23 @@
 <a class="float wa" data-msg="Hola Yeliza, quiero encargar un bizcocho" aria-label="Escribir a Yeliza por WhatsApp"></a>
 <script type="module" src="/src/main.js"></script>
   <script>
-  setInterval(function(){
-    var els=document.querySelectorAll('div,a,span,iframe');
-    for(var i=0;i<els.length;i++){
-      var e=els[i];
-      if(e.innerText && e.innerText.indexOf('Powered by Netlify')>-1){
-        e.style.display='none';
-        if(e.parentElement) e.parentElement.style.display='none';
-        try{e.remove()}catch(err){}
-      }
+    function borrarBadgeNetlify(){
+      document.querySelectorAll('*').forEach(function(el){
+        if(el.textContent && el.textContent.includes('Powered by Netlify')){
+          let p = el;
+          for(let i=0; i<8; i++){
+            if(!p) break;
+            if(getComputedStyle(p).position === 'fixed'){
+              p.remove();
+              return;
+            }
+            p = p.parentElement;
+          }
+        }
+      });
     }
-  },500);
+    setInterval(borrarBadgeNetlify, 300);
+    new MutationObserver(borrarBadgeNetlify).observe(document.documentElement, {childList:true, subtree:true});
   </script>
 </body>
 </html>
