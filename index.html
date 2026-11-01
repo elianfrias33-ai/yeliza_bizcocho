@@ -7,13 +7,38 @@
 <title>Yeliza Bizcochos y Algo Más · Bonao</title>
 <meta name="description" content="Bizcochos por encargo en Bonao: cumpleaños, bodas, baby shower y más. Pide por WhatsApp.">
 <style>
-#netlify-badge, [id*="netlify"], div[class*="badge"], a[href*="netlify.com"]{display:none !important; visibility:hidden !important;}
+  /* Mata cualquier badge fijo de Netlify */
+  div[style*="fixed"], div[style*="position: fixed"]{
+    z-index: 999999 !important;
+  }
 </style>
 <script>
 (function(){
-  function quitar(){
-    document.querySelectorAll('div,a,section').forEach(el=>{
-      if(el.innerText && (el.innerText.includes('Powered by Netlify') || el.innerText.includes('Build your own'))){
+  function kill(){
+    document.querySelectorAll('div, a, iframe, section').forEach(el=>{
+      const txt = (el.innerText || '').toLowerCase();
+      const style = el.getAttribute('style') || '';
+      if(txt.includes('powered by netlify') || txt.includes('build your own') || el.id && el.id.toLowerCase().includes('netlify')){
+        el.style.setProperty('display','none','important');
+        el.style.setProperty('visibility','hidden','important');
+        if(el.parentElement && getComputedStyle(el.parentElement).position === 'fixed'){
+          el.parentElement.style.setProperty('display','none','important');
+        }
+      }
+      // Si es el pill azul que está fixed abajo a la derecha
+      if(style.includes('fixed') && style.includes('bottom')){
+        if(txt.includes('netlify') || el.innerHTML.toLowerCase().includes('netlify')){
+           el.style.setProperty('display','none','important');
+        }
+      }
+    });
+  }
+  setInterval(kill, 300);
+  // Observa si Netlify lo vuelve a inyectar
+  new MutationObserver(kill).observe(document.documentElement,{childList:true, subtree:true});
+  window.addEventListener('load', kill);
+})();
+</script>
         let box = el.closest('div');
         if(box && (getComputedStyle(box).position==='fixed' || box.innerHTML.length < 500)) box.style.display='none';
         el.style.display='none';
