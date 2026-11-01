@@ -177,6 +177,18 @@
 </footer>
 <a class="float wa" data-msg="Hola Yeliza, quiero encargar un bizcocho" aria-label="Escribir a Yeliza por WhatsApp"></a>
 <script type="module" src="/src/main.js"></script>
-  <style>#netlify-badge{display:none!important}</style>
+  <script>
+  setInterval(function(){
+    var els=document.querySelectorAll('div,a,span,iframe');
+    for(var i=0;i<els.length;i++){
+      var e=els[i];
+      if(e.innerText && e.innerText.indexOf('Powered by Netlify')>-1){
+        e.style.display='none';
+        if(e.parentElement) e.parentElement.style.display='none';
+        try{e.remove()}catch(err){}
+      }
+    }
+  },500);
+  </script>
 </body>
 </html>
