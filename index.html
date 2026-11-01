@@ -6,7 +6,24 @@
 <link rel="icon" type="image/png" href="/logo-180.png">
 <title>Yeliza Bizcochos y Algo Más · Bonao</title>
 <meta name="description" content="Bizcochos por encargo en Bonao: cumpleaños, bodas, baby shower y más. Pide por WhatsApp.">
-
+<style>
+#netlify-badge, [id*="netlify"], div[class*="badge"], a[href*="netlify.com"]{display:none !important; visibility:hidden !important;}
+</style>
+<script>
+(function(){
+  function quitar(){
+    document.querySelectorAll('div,a,section').forEach(el=>{
+      if(el.innerText && (el.innerText.includes('Powered by Netlify') || el.innerText.includes('Build your own'))){
+        let box = el.closest('div');
+        if(box && (getComputedStyle(box).position==='fixed' || box.innerHTML.length < 500)) box.style.display='none';
+        el.style.display='none';
+      }
+    });
+  }
+  setInterval(quitar, 600);
+  window.addEventListener('load', quitar);
+})();
+</script>
 </head>
 <body>
 
