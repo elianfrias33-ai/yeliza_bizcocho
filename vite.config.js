@@ -1,15 +1,13 @@
-import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const root = process.cwd();
 
 const pages = {
-  main: resolve(__dirname, 'index.html'),
-  legal: resolve(__dirname, 'legal.html'),
+  main: resolve(root, 'index.html'),
+  legal: resolve(root, 'legal.html'),
 };
 
-// PAGE solo se usa para generar vistas previas de una sola pagina
 const only = process.env.PAGE;
 
 export default defineConfig({
