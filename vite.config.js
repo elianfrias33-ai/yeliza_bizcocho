@@ -1,18 +1,13 @@
-import { resolve } from 'node:path';
-import { defineConfig } from 'vite';
-
-const root = process.cwd();
-
-const pages = {
-  main: resolve(root, 'index.html'),
-  legal: resolve(root, 'legal.html'),
-};
-
-const only = process.env.PAGE;
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   build: {
-    outDir: only ? `dist-${only}` : 'dist',
-    rollupOptions: { input: only ? { [only]: pages[only] } : pages },
-  },
-});
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        legal: 'legal.html'
+      }
+    }
+  }
+})
